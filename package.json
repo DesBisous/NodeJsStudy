@@ -4,12 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node koa/log.js",
+    "start": "node koa/router/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.5.1"
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
   }
 }
