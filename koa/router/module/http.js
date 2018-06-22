@@ -1,7 +1,8 @@
 // add url-route:
 var hello =  async (ctx, next) => {
     var name = ctx.params.name;
-    ctx.response.body = `<h1>Hello, ${name}!</h1>`;
+    console.log('123');
+    ctx.render('hello.html', {name: name});
 };
 
 var index = async (ctx, next) => {
@@ -25,6 +26,9 @@ var signin = async (ctx, next) => {
         <p><a href="/">Try again</a></p>`;
     }
 };
+var helloPage =  async (ctx, next) => {
+    ctx.render('helloPage.html');
+};
 
 module.exports = [
     {
@@ -41,5 +45,10 @@ module.exports = [
         method: 'POST',
         path: '/signin',
         func: signin
-    }
+    },
+    {
+        method: 'GET',
+        path: '/helloPage',
+        func: helloPage,
+    },
 ]
