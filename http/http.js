@@ -1,4 +1,5 @@
 'use strict';
+// nodejs的http模块基础知识
 
 // 导入http模块:
 var http = require('http');

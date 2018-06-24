@@ -3,8 +3,8 @@ const Koa = require('koa');
 
 // 创建一个Koa对象表示web app本身:
 const bodyParser = require('koa-bodyparser');
-const routes = require('./router/router');
-const nunjucks = require("./router/nunjucks");
+const routes = require('./src/router');
+const nunjucks = require("./src/nunjucks");
 const path = require("path");
 const staticFiles = require('./static-files');
 

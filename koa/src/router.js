@@ -22,7 +22,7 @@ function addControllers(router, dir) {
 }
 
 module.exports = function (dir) {
-    let _dir = dir || 'module'; // 如果不传参数，扫描目录默认为'module'
+    let _dir = dir || 'http'; // 如果不传参数，扫描目录默认为'module'
     addControllers(router, _dir);
     return router.routes();
 };

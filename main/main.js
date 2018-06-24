@@ -1,4 +1,5 @@
 'use strict';
+// nodejs 的基本知识
 
 // 根据浏览器和Node环境提供的全局变量来判断是什么环境
 if (typeof(window) === 'undefined') {
