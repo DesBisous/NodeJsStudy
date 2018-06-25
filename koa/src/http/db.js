@@ -10,7 +10,7 @@ const SearchUser =  async (ctx, next) => {
   if (users) {
     ctx.response.body = JSON.stringify(users);
   } else {
-    ctx.response.body = '查询异常，请联系管理员';
+    ctx.response.body = '查询失败！';
   }
 };
 
@@ -29,7 +29,7 @@ const UpdateUser =  async (ctx, next) => {
   if (users) {
     ctx.response.body = `成功修改了：${users[0]} 行`;
   } else {
-    ctx.response.body = '查询异常，请联系管理员';
+    ctx.response.body = '更新失败！';
   }
 };
 
@@ -50,7 +50,21 @@ const CreateUser =  async (ctx, next) => {
   if (users) {
     ctx.response.body = `成功添加了：1 行`;
   } else {
-    ctx.response.body = '查询异常，请联系管理员';
+    ctx.response.body = '添加失败！';
+  }
+};
+
+const DestroyUser =  async (ctx, next) => {
+  const users = await User.destroy({
+    where: {
+      name: ctx.params.name
+    }
+  });
+  ctx.response.type = 'application/json';
+  if (users) {
+    ctx.response.body = `成功删除了：1 行`;
+  } else {
+    ctx.response.body = '删除失败！';
   }
 };
 
@@ -69,5 +83,10 @@ module.exports = [
     method: 'GET',
     path: '/CreateUser',
     func: CreateUser
+  },
+  {
+    method: 'GET',
+    path: '/DestroyUser/:name',
+    func: DestroyUser
   },
 ]
