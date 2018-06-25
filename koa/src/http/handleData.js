@@ -1,4 +1,4 @@
-import { User } from '../mysql';
+import { User } from '../db/models/User';
 
 const SearchUser =  async (ctx, next) => {
   const users = await User.findAll({
@@ -43,7 +43,6 @@ const CreateUser =  async (ctx, next) => {
     iphone: '13651478554',
     email: '919624732@qq.com',
     address: '美国纽约唐人街',
-    createDate: new Date(),
     state: 1
   });
   ctx.response.type = 'application/json';
