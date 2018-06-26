@@ -5,6 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "babel-node koa/app.js",
+    "dev": "NODE_ENV=development npm run start",
+    "uat": "NODE_ENV=uat npm run start",
+    "build": "NODE_ENV=production npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
