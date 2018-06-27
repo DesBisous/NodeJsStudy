@@ -8,7 +8,7 @@
     "dev": "NODE_ENV=development npm run start",
     "uat": "NODE_ENV=uat npm run start",
     "build": "NODE_ENV=production npm run start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 5000 --compilers js:babel-core/register mocha/test/**/*.js"
   },
   "author": "",
   "license": "ISC",
