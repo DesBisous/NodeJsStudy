@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "babel-node koa/app.js",
+    "start": "babel-node koa/start.js",
     "dev": "NODE_ENV=development npm run start",
     "uat": "NODE_ENV=uat npm run start",
     "build": "NODE_ENV=production npm run start",
@@ -24,13 +24,15 @@
     "sequelize": "^4.38.0",
     "tedious": "^2.6.1"
   },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
+  },
   "babel": {
     "presets": [
       "es2015"
     ]
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
   }
 }

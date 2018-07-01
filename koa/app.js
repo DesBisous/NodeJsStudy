@@ -2,7 +2,7 @@
 const Koa = require('koa');
 
 // 创建一个Koa对象表示web app本身:
-const bodyParser = require('koa-bodyparser');
+const bodyParser = require('koa-bodyparser');// 接收post请求的时候，从body传过来的参数
 const routes = require('./src/router');
 const nunjucks = require("./src/nunjucks");
 const path = require("path");
@@ -31,7 +31,7 @@ if (! isProduction) {
 app.use(bodyParser());
 
 // 服务端渲染
-app.use(nunjucks(path.resolve(__dirname, 'router/views'), {
+app.use(nunjucks(path.resolve(__dirname, 'src/views'), {
     noCache: !isProduction,
     watch: !isProduction
 }));
@@ -39,5 +39,4 @@ app.use(nunjucks(path.resolve(__dirname, 'router/views'), {
 // add router middleware:
 app.use(routes());
 
-app.listen(3000);
-console.log('app started at port 3000...');
+export default app;

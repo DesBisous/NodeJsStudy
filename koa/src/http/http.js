@@ -1,7 +1,6 @@
 // add url-route:
 var hello =  async (ctx, next) => {
     var name = ctx.params.name;
-    console.log('123');
     ctx.render('hello.html', {name: name});
 };
 
